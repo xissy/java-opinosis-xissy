@@ -12,9 +12,18 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 import com.opinosis.Node;
 import com.opinosis.OpinosisCore;
 import com.opinosis.OpinosisGraphBuilder;
+import com.opinosis.OpinosisMain;
 import com.opinosis.summarizer.BasicSummarizer;
 
 public class Opinosis {
+	public Opinosis() {
+
+	}
+
+	public Opinosis(String propfile) {
+		OpinosisMain opinosisMain = new OpinosisMain();
+		opinosisMain.loadProps(propfile);
+	}
 
 	public String summarize(String fullText) throws IOException {
 		SimpleDirectedWeightedGraph<Node, DefaultWeightedEdge> g = new SimpleDirectedWeightedGraph<Node, DefaultWeightedEdge>(
